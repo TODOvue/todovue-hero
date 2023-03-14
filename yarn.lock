@@ -7347,6 +7347,24 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+todovue-button@^1.1.3, todovue-button@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/todovue-button/-/todovue-button-1.2.0.tgz#66ef46d9c5a5fb3d6fb1960f11f5f15f66166d29"
+  integrity sha512-NpinWUk/TBCKnKUob+jim9s6Y6pq1NKholuUHWnLNjzn9Yt+APXCdwz3HBJfwu78jEkfYWNhH5ptM2xx+40qjw==
+  dependencies:
+    core-js "^3.8.3"
+    todovue-demo "^1.0.0"
+    vue "^3.2.13"
+
+todovue-demo@^1.0.0, todovue-demo@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/todovue-demo/-/todovue-demo-1.1.0.tgz#52c741d371505b43b4aaa3c2c20a9c912fb5ebb4"
+  integrity sha512-UlQXCkaA/MrE0frLDoH/sBagRqTGntZtm8lMS0G7lXpICuS2T22/dyRqn9FuMOO9AwQRAFO7ePGkt3pzUrhDdA==
+  dependencies:
+    core-js "^3.8.3"
+    todovue-button "^1.1.3"
+    vue "^3.2.13"
+
 toidentifier@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.1.tgz#3be34321a88a820ed1bd80dfaa33e479fbb8dd35"
