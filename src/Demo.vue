@@ -1,5 +1,5 @@
 <template>
-  <tv-demo invertTheme>
+  <tv-demo hideBackground>
     <h2 class="title">TODOvue hero</h2>
     <div v-for="(demo, index) in demos" :key="`demo-${index}`" class="demo">
       <h2>{{ demo.title }}</h2>
@@ -67,8 +67,4 @@ export default {
 };
 </script>
 
-<style>
-h2 {
-  color: white !important;
-}
-</style>
+<style></style>

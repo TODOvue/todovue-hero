@@ -30,7 +30,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "todovue-button": "^1.2.0",
-    "todovue-demo": "^1.1.0",
+    "todovue-demo": "^1.2.1",
     "vue": "^3.2.13"
   },
   "devDependencies": {
