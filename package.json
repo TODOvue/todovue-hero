@@ -3,7 +3,6 @@
   "version": "1.0.1",
   "private": false,
   "main": "dist/tvhero.common.js",
-  "style": "dist/tvhero.css",
   "author": "Cristhian Daza",
   "description": "Component hero created for the TodoVue blog",
   "repository": {
@@ -23,14 +22,15 @@
   },
   "scripts": {
     "demo": "vue-cli-service serve",
-    "test:unit": "vue-cli-service test:unit",
+    "test:unit": "vue-cli-service test:unit --coverage",
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service build --target lib --name tvhero src/component/TvHero.vue --config webpack.config.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "todovue-button": "^1.2.0",
-    "todovue-demo": "^1.2.1",
+    "todovue-button": "^2.0.0",
+    "todovue-css": "^1.2.4",
+    "todovue-demo": "^2.1.1",
     "vue": "^3.2.13"
   },
   "devDependencies": {
