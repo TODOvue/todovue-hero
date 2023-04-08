@@ -131,25 +131,35 @@
     var setPublicPath = null;
     ; // CONCATENATED MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
     var external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject = __webpack_require__(797);
-    ; // CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/component/TvButton.vue?vue&type=template&id=87bbc1a0&scoped=true
+    ; // CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/component/TvButton.vue?vue&type=template&id=f811bba2
 
     function render(_ctx, _cache, $props, $setup, $data, $options) {
       return (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("button", {
-        class: (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)({
-          'is-rounded': $props.isRounded,
-          'is-full': $props.isFull,
-          'is-outlined': $props.isOutlined,
-          'is-small': $props.isSmall,
-          'is-large': $props.isLarge,
-          'is-success': $props.isSuccess
-        }),
-        onClick: _cache[0] || (_cache[0] = $event => _ctx.$emit('handleClick'))
+        class: (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)(["tv-btn", {
+          'tv-btn-rounded': $props.isRounded,
+          'tv-btn-full': $props.isFull,
+          'tv-btn-outlined': $props.isOutlined,
+          'tv-btn-small': $props.isSmall,
+          'tv-btn-large': $props.isLarge,
+          'tv-btn-success': $props.isSuccess,
+          'tv-btn-info': $props.isInfo,
+          'tv-btn-warning': $props.isWarning,
+          'tv-btn-error': $props.isError,
+          'tv-btn-disabled': $props.isDisabled,
+          'tv-btn-circle': $props.isCircle,
+          'tv-btn-text': $props.isText
+        }]),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.handleClick && $options.handleClick(...args))
       }, [$props.icon ? ((0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("i", {
         key: 0,
-        class: (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)(`icon-${$props.icon}`)
-      }, null, 2)) : (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "default", {}, undefined, true)], 2);
+        class: (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.normalizeClass)(["tv-btn-icon", `tv-icon-${$props.icon} tv-icon-position-${$props.iconPosition}`])
+      }, null, 2)) : (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), !$props.text ? (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderSlot)(_ctx.$slots, "default", {
+        key: 1
+      }) : (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true), $props.text ? ((0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.Fragment, {
+        key: 2
+      }, [(0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createTextVNode)((0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.text), 1)], 64)) : (0, external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)], 2);
     }
-    ; // CONCATENATED MODULE: ./src/component/TvButton.vue?vue&type=template&id=87bbc1a0&scoped=true
+    ; // CONCATENATED MODULE: ./src/component/TvButton.vue?vue&type=template&id=f811bba2
 
     ; // CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/component/TvButton.vue?vue&type=script&lang=js
     /* harmony default export */
@@ -183,22 +193,54 @@
         icon: {
           type: String,
           default: ""
+        },
+        isInfo: {
+          type: Boolean,
+          default: false
+        },
+        isWarning: {
+          type: Boolean,
+          default: false
+        },
+        isError: {
+          type: Boolean,
+          default: false
+        },
+        isDisabled: {
+          type: Boolean,
+          default: false
+        },
+        isCircle: {
+          type: Boolean,
+          default: false
+        },
+        isText: {
+          type: Boolean,
+          default: false
+        },
+        text: {
+          type: String,
+          default: ""
+        },
+        iconPosition: {
+          type: String,
+          default: "right"
+        }
+      },
+      methods: {
+        handleClick() {
+          this.$emit("click");
         }
       }
     };
     ; // CONCATENATED MODULE: ./src/component/TvButton.vue?vue&type=script&lang=js
-
-    ; // CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/component/TvButton.vue?vue&type=style&index=0&id=87bbc1a0&scoped=true&lang=css
-    // extracted by mini-css-extract-plugin
-
-    ; // CONCATENATED MODULE: ./src/component/TvButton.vue?vue&type=style&index=0&id=87bbc1a0&scoped=true&lang=css
 
     // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
     var exportHelper = __nested_webpack_require_820__(89);
     ; // CONCATENATED MODULE: ./src/component/TvButton.vue
 
     ;
-    const __exports__ = /*#__PURE__*/(0, exportHelper /* default */.Z)(TvButtonvue_type_script_lang_js, [['render', render], ['__scopeId', "data-v-87bbc1a0"]]);
+    const __exports__ = /*#__PURE__*/(0, exportHelper /* default */.Z)(TvButtonvue_type_script_lang_js, [['render', render]]);
 
     /* harmony default export */
     var TvButton = __exports__;
@@ -334,57 +376,71 @@ if (typeof window !== 'undefined') {
 
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(797);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/component/TvHero.vue?vue&type=template&id=a131eb0a&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/component/TvHero.vue?vue&type=template&id=33f40ce4
 
-const _withScopeId = n => (_pushScopeId("data-v-a131eb0a"), n = n(), _popScopeId(), n);
 const _hoisted_1 = {
-  class: "hero"
+  key: 0,
+  class: "tv-hero-image"
 };
-const _hoisted_2 = {
-  class: "hero-image"
+const _hoisted_2 = ["src", "alt"];
+const _hoisted_3 = {
+  class: "tv-hero-content"
 };
-const _hoisted_3 = ["src", "alt"];
 const _hoisted_4 = {
-  class: "hero-content"
+  class: "tv-hero-title"
 };
 const _hoisted_5 = {
-  class: "hero-content_title"
+  class: "tv-hero-description"
 };
 const _hoisted_6 = {
-  class: "hero-content_description"
-};
-const _hoisted_7 = {
   key: 0,
-  class: "hero-content_actions"
+  class: "tv-hero-actions"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_tv_button = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.resolveComponent)("tv-button");
   return (0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", {
-    class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.normalizeClass)(["container", {
-      'is-entry': $props.isEntry
+    class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.normalizeClass)(["tv-hero-body", {
+      'tv-hero-entry': $props.isEntry
     }])
-  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_1, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_2, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("img", {
+  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", {
+    class: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.normalizeClass)(["tv-hero", {
+      'tv-hero-full': !$props.image
+    }])
+  }, [$props.image ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", _hoisted_1, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("img", {
     src: $props.image,
     alt: $props.imageName
-  }, null, 8, _hoisted_3)]), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_4, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_5, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "title", {}, undefined, true)]), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_6, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "description", {}, undefined, true)]), !$props.isEntry ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", _hoisted_7, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createVNode)(_component_tv_button, {
-    "is-small": "",
-    "is-outlined": "",
-    "is-rounded": "",
+  }, null, 8, _hoisted_2)])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_3, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_4, [!$props.titleText ? (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "title", {
+    key: 0
+  }) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true), $props.titleText ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, {
+    key: 1
+  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createTextVNode)((0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.titleText), 1)], 64)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)]), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("div", _hoisted_5, [!$props.descriptionText ? (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "description", {
+    key: 0
+  }) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true), $props.descriptionText ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, {
+    key: 1
+  }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createTextVNode)((0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.descriptionText), 1)], 64)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)]), !$props.isEntry ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", _hoisted_6, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createVNode)(_component_tv_button, {
+    isRounded: "",
     onClick: $options.clickPrimary
   }, {
-    default: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withCtx)(() => [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "buttonPrimary", {}, undefined, true)]),
+    default: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withCtx)(() => [!$props.buttonPrimaryText ? (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "buttonPrimary", {
+      key: 0
+    }) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true), $props.buttonPrimaryText ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, {
+      key: 1
+    }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createTextVNode)((0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.buttonPrimaryText), 1)], 64)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)]),
     _: 3
   }, 8, ["onClick"]), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createVNode)(_component_tv_button, {
-    "is-small": "",
-    "is-outlined": "",
-    "is-rounded": "",
+    isRounded: "",
+    isOutlined: "",
     onClick: $options.clickSecondary
   }, {
-    default: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withCtx)(() => [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "buttonSecondary", {}, undefined, true)]),
+    default: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.withCtx)(() => [!$props.buttonSecondaryText ? (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "buttonSecondary", {
+      key: 0
+    }) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true), $props.buttonSecondaryText ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, {
+      key: 1
+    }, [(0,external_commonjs_vue_commonjs2_vue_root_Vue_.createTextVNode)((0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.buttonSecondaryText), 1)], 64)) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)]),
     _: 3
-  }, 8, ["onClick"])])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)])])], 2);
+  }, 8, ["onClick"])])) : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)])], 2)], 2);
 }
-;// CONCATENATED MODULE: ./src/component/TvHero.vue?vue&type=template&id=a131eb0a&scoped=true
+;// CONCATENATED MODULE: ./src/component/TvHero.vue?vue&type=template&id=33f40ce4
 
 // EXTERNAL MODULE: ./node_modules/todovue-button/dist/tvbutton.common.js
 var tvbutton_common = __webpack_require__(8);
@@ -396,15 +452,31 @@ var tvbutton_common_default = /*#__PURE__*/__webpack_require__.n(tvbutton_common
   props: {
     image: {
       type: String,
-      required: true
+      default: null
     },
     imageName: {
       type: String,
-      required: true
+      default: null
     },
     isEntry: {
       type: Boolean,
       default: false
+    },
+    titleText: {
+      type: String,
+      default: null
+    },
+    descriptionText: {
+      type: String,
+      default: null
+    },
+    buttonPrimaryText: {
+      type: String,
+      default: null
+    },
+    buttonSecondaryText: {
+      type: String,
+      default: null
     }
   },
   components: {
@@ -421,11 +493,6 @@ var tvbutton_common_default = /*#__PURE__*/__webpack_require__.n(tvbutton_common
 });
 ;// CONCATENATED MODULE: ./src/component/TvHero.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/component/TvHero.vue?vue&type=style&index=0&id=a131eb0a&scoped=true&lang=css
-// extracted by mini-css-extract-plugin
-
-;// CONCATENATED MODULE: ./src/component/TvHero.vue?vue&type=style&index=0&id=a131eb0a&scoped=true&lang=css
-
 // EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
 var exportHelper = __webpack_require__(89);
 ;// CONCATENATED MODULE: ./src/component/TvHero.vue
@@ -434,9 +501,7 @@ var exportHelper = __webpack_require__(89);
 
 
 ;
-
-
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(TvHerovue_type_script_lang_js, [['render',render],['__scopeId',"data-v-a131eb0a"]])
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.Z)(TvHerovue_type_script_lang_js, [['render',render]])
 
 /* harmony default export */ var TvHero = (__exports__);
 ;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
