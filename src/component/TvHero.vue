@@ -14,13 +14,13 @@
           <template v-if="descriptionText">{{ descriptionText }}</template>
         </div>
         <div class="tv-hero-actions" v-if="!isEntry">
-          <tv-button isRounded @click="clickPrimary">
+          <tv-button isRounded @click="clickPrimaryButton">
             <slot name="buttonPrimary" v-if="!buttonPrimaryText"></slot>
             <template v-if="buttonPrimaryText">
               {{ buttonPrimaryText }}
             </template>
           </tv-button>
-          <tv-button isRounded isOutlined @click="clickSecondary">
+          <tv-button isRounded isOutlined @click="clickSecondaryButton">
             <slot name="buttonSecondary" v-if="!buttonSecondaryText"></slot>
             <template v-if="buttonSecondaryText">
               {{ buttonSecondaryText }}
@@ -69,14 +69,21 @@ export default {
   components: {
     TvButton,
   },
-  methods: {
-    clickPrimary() {
-      this.$emit("clickPrimary");
-    },
-    clickSecondary() {
-      this.$emit("clickSecondary");
-    },
+  setup(_, { emit }) {
+    const clickPrimaryButton = () => {
+      emit("clickPrimaryButton");
+    };
+
+    const clickSecondaryButton = () => {
+      emit("clickSecondaryButton");
+    };
+
+    return {
+      clickPrimaryButton,
+      clickSecondaryButton,
+    };
   },
+  emits: ["clickPrimaryButton", "clickSecondaryButton"],
 };
 </script>
 

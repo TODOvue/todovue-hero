@@ -22,16 +22,16 @@ describe("TvButton Component", () => {
 
   it("emits 'clickPrimary' event when clickPrimary method is called", async () => {
     const wrapper = shallowMount(TvHero);
-    await wrapper.vm.clickPrimary();
+    await wrapper.vm.clickPrimaryButton();
 
-    expect(wrapper.emitted("clickPrimary")).toBeTruthy();
+    expect(wrapper.emitted("clickPrimaryButton")).toBeTruthy();
   });
 
   it("emits 'clickSecondary' event when clickSecondary method is called", async () => {
     const wrapper = shallowMount(TvHero);
-    await wrapper.vm.clickSecondary();
+    await wrapper.vm.clickSecondaryButton();
 
-    expect(wrapper.emitted("clickSecondary")).toBeTruthy();
+    expect(wrapper.emitted("clickSecondaryButton")).toBeTruthy();
   });
 
   it("renders the title correctly", () => {
