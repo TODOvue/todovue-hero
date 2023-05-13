@@ -7,7 +7,7 @@
   >
     <div class="tv-hero" :class="{ 'tv-hero-full': !hero.image }">
       <div class="tv-hero-image" v-if="hero.image">
-        <img @click="handleImage" :src="hero.image" :alt="hero.alt" />
+        <img :src="hero.image" :alt="hero.alt" />
       </div>
       <div class="tv-hero-content">
         <div class="tv-hero-title">
@@ -63,13 +63,11 @@ export default {
     TvButton,
   },
   setup(props) {
-    const { handleClick, handleClickSecondary, handleImage, custom, hero } =
-      useHero(props);
+    const { handleClick, handleClickSecondary, custom, hero } = useHero(props);
 
     return {
       handleClick,
       handleClickSecondary,
-      handleImage,
       custom,
       hero,
     };

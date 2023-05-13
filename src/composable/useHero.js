@@ -11,10 +11,6 @@ const useHero = (props) => {
     _vm.emit("clickSecondaryButton");
   };
 
-  const handleImage = () => {
-    _vm.emit("clickImage");
-  };
-
   const hero = computed(() => {
     const { configHero } = props;
     if (!configHero) return null;
@@ -95,7 +91,6 @@ const useHero = (props) => {
   return {
     handleClick,
     handleClickSecondary,
-    handleImage,
     custom,
     hero,
   };

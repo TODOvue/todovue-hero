@@ -17,7 +17,6 @@ export const demos = [
   <tv-hero
     :configHero="configHero"
     @click-button="handleClick"
-    @click-image="handleClickImage"
   />
 </template>
 
@@ -38,14 +37,9 @@ export default {
       console.log("click button");
     }
     
-    const handleClickImage = () => {
-      console.log("click image");
-    }
-    
     return {
       configHero,
       handleClick,
-      handleClickImage,
     }
   }
 }
@@ -71,7 +65,6 @@ export default {
     :configHero="configHero"
     @click-button="handleClick"
     @click-secondary-button="handleClickSecondary"
-    @click-image="handleClickImage"
   />
 </template>
 
@@ -92,11 +85,7 @@ export default {
     const handleClick = () => {
       console.log("click button");
     }
-    
-    const handleClickImage = () => {
-      console.log("click image");
-    }
-    
+
     const handleClickSecondary = () => {
       console.log("click secondary button");
     }
@@ -104,7 +93,6 @@ export default {
     return {
       configHero,
       handleClick,
-      handleClickImage,
       handleClickSecondary,
     }
   }
@@ -140,7 +128,6 @@ export default {
     :customHero="customHero"
     @click-button="handleClick"
     @click-secondary-button="handleClickSecondary"
-    @click-image="handleClickImage"
   />
 </template>
 
@@ -171,10 +158,6 @@ export default {
       console.log("click button");
     }
     
-    const handleClickImage = () => {
-      console.log("click image");
-    }
-    
     const handleClickSecondary = () => {
       console.log("click secondary button");
     }
@@ -183,7 +166,6 @@ export default {
       configHero,
       customHero,
       handleClick,
-      handleClickImage,
       handleClickSecondary,
     }
   }
@@ -207,7 +189,6 @@ export default {
     html: `<template>
   <tv-hero
     :configHero="configHero"
-    @click-image="@click-image"
     isEntry
   />
 </template>
@@ -223,16 +204,10 @@ export default {
       image: "https://todovue.com/logo.png",
       titleText: "TODOvue Blog",
     });
-
-    
-    const handleClickImage = () => {
-      console.log("click image");
-    }
     
     return {
       configHero,
       customHero,
-      handleClickImage,
     }
   }
 }
@@ -260,7 +235,6 @@ export default {
   <tv-hero
     :configHero="configHero"
     :customHero="customHero"
-    @click-image="@click-image"
     isEntry
   />
 </template>
@@ -282,14 +256,9 @@ export default {
       colorBody: "#ffffff",
     });
     
-    const handleClickImage = () => {
-      console.log("click image");
-    }
-    
     return {
       configHero,
       customHero,
-      handleClickImage,
     }
   }
 }
