@@ -37,21 +37,21 @@ const useHero = (props) => {
     return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
   };
 
-  const _getCustomStyle = (configHero, bgKey, colorKey) => {
-    if (configHero[bgKey] || configHero[colorKey]) {
+  const _getCustomStyle = (customHero, bgKey, colorKey) => {
+    if (customHero[bgKey] || customHero[colorKey]) {
       return {
-        backgroundColor: configHero[bgKey],
-        color: configHero[colorKey],
+        backgroundColor: customHero[bgKey],
+        color: customHero[colorKey],
       };
     }
     return {};
   };
 
-  const _getCustomStyleAfter = (configHero, bgKey) => {
-    if (configHero[bgKey]) {
+  const _getCustomStyleAfter = (customHero, bgKey) => {
+    if (customHero[bgKey]) {
       return {
-        backgroundColor: _adjustColor(configHero[bgKey], 0.9),
-        boxShadow: `0 0 10x 0 ${_adjustColor(configHero[bgKey], 1.1)}`,
+        backgroundColor: _adjustColor(customHero[bgKey], 0.9),
+        boxShadow: `0 0 10x 0 ${_adjustColor(customHero[bgKey], 1.1)}`,
       };
     }
     return {};
