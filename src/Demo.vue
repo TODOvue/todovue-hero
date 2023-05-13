@@ -5,7 +5,6 @@
 <script>
 import { shallowRef } from "vue";
 import TvHero from "@/component/TvHero.vue";
-import TvDemo from "todovue-demo";
 import { demos } from "@/utils/mocks.js";
 
 export default {
@@ -18,10 +17,7 @@ export default {
       demos,
     };
   },
-  components: {
-    TvDemo,
-  },
 };
 </script>
 
-<style lang="scss"></style>
+<style></style>
