@@ -16,3 +16,22 @@ exports[`TvButton Component should matches snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`TvButton Component should not render card when configCard is null 1`] = `<!--v-if-->`;
+
+exports[`TvButton Component should render custom style 1`] = `
+<div class="tv-hero-body" style="background-color: rgb(30, 29, 35); color: rgb(225, 226, 220);">
+  <div class="tv-hero">
+    <div class="tv-hero-image"><img src="https://todovue.com/logo.png" alt="TODOvue Logo"></div>
+    <div class="tv-hero-content">
+      <div class="tv-hero-title">TODOvue Blog <div class="tv-hero-separator" style="background-color: rgb(27, 26, 31); box-shadow: 0 0 10x 0 #211f26;"></div>
+      </div>
+      <div class="tv-hero-description">Introducing my Vue.js blog! Get ready to dive into the world of Vue.js.</div>
+      <div class="tv-hero-actions">
+        <tv-button-stub isrounded="true" isfull="false" isoutlined="false" issmall="false" islarge="false" issuccess="false" icon="" isinfo="false" iswarning="false" iserror="false" isdisabled="false" iscircle="false" istext="false" buttontext="" iconposition="right" customstyle="[object Object]" type="button"></tv-button-stub>
+        <tv-button-stub isrounded="true" isfull="false" isoutlined="true" issmall="false" islarge="false" issuccess="false" icon="" isinfo="false" iswarning="false" iserror="false" isdisabled="false" iscircle="false" istext="false" buttontext="" iconposition="right" customstyle="[object Object]" type="button"></tv-button-stub>
+      </div>
+    </div>
+  </div>
+</div>
+`;
