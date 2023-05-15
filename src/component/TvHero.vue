@@ -11,11 +11,11 @@
       </div>
       <div class="tv-hero-content">
         <div class="tv-hero-title">
-          {{ hero.titleText }}
+          {{ hero.title }}
           <div class="tv-hero-separator" :style="custom.bgAfter"></div>
         </div>
         <div class="tv-hero-description">
-          {{ hero.descriptionText }}
+          {{ hero.description }}
         </div>
         <div class="tv-hero-actions" v-if="!isEntry">
           <tv-button
@@ -23,16 +23,16 @@
             :customStyle="custom.customButton"
             @click-button="handleClick"
           >
-            {{ hero.buttonText }}
+            {{ hero.button }}
           </tv-button>
           <tv-button
-            v-if="hero.buttonSecondaryText"
+            v-if="hero.buttonSecondary"
             isRounded
             isOutlined
             :customStyle="custom.customButtonSecondary"
             @click-button="handleClickSecondary"
           >
-            {{ hero.buttonSecondaryText }}
+            {{ hero.buttonSecondary }}
           </tv-button>
         </div>
       </div>

@@ -17,10 +17,10 @@ const useHero = (props) => {
     return {
       image: configHero.image,
       alt: configHero.alt,
-      titleText: configHero.titleText,
-      descriptionText: configHero.descriptionText,
-      buttonText: configHero.buttonText,
-      buttonSecondaryText: configHero.buttonSecondaryText,
+      title: configHero.title,
+      description: configHero.description,
+      button: configHero.button,
+      buttonSecondary: configHero.buttonSecondary,
     };
   });
 
