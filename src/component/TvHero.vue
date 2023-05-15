@@ -72,7 +72,7 @@ export default {
       hero,
     };
   },
-  emits: ["clickButton", "clickSecondaryButton", "clickImage"],
+  emits: ["clickButton", "clickSecondaryButton"],
 };
 </script>
 
