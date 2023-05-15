@@ -175,7 +175,7 @@ Clone the repository and install the dependencies
 git clone https://github.com/TODOvue/todovue-hero.git
 ```
 ```bash
-cd todovue-card
+cd todovue-hero
 ```
 
 Install the dependencies
