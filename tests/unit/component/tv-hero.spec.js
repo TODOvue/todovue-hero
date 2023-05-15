@@ -2,55 +2,83 @@ import { shallowMount } from "@vue/test-utils";
 import TvHero from "@/component/TvHero.vue";
 
 describe("TvButton Component", () => {
+  const configHero = {
+    title: "TODOvue Blog",
+    description:
+      "Introducing my Vue.js blog! Get ready to dive into the world of Vue.js.",
+    button: "View all blogs",
+    image: "https://todovue.com/logo.png",
+    alt: "TODOvue Logo",
+  };
+
   it("should matches snapshot", () => {
     const wrapper = shallowMount(TvHero, {
       props: {
-        titleText: "TODOvue",
-        descriptionText: "TODOvue Blog",
-        buttonPrimaryText: "Primary",
-        buttonSecondaryText: "Secondary",
+        configHero,
       },
     });
     expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("emits a click event when the button is clicked", () => {
-    const wrapper = shallowMount(TvHero);
-    wrapper.find("tv-button-stub").trigger("click");
-    expect(wrapper.emitted("click")).toBeTruthy();
+  it("should not render card when configCard is null", () => {
+    const wrapper = shallowMount(TvHero, {
+      props: {
+        configHero: null,
+      },
+    });
+    expect(wrapper.html()).toMatchSnapshot();
   });
 
-  it("emits 'clickPrimary' event when clickPrimary method is called", async () => {
-    const wrapper = shallowMount(TvHero);
-    await wrapper.vm.clickPrimaryButton();
-
-    expect(wrapper.emitted("clickPrimaryButton")).toBeTruthy();
+  it("should emmit event when primary button is clicked", async () => {
+    const wrapper = shallowMount(TvHero, {
+      props: {
+        configHero,
+      },
+    });
+    wrapper.vm.handleClick();
+    expect(wrapper.emitted("clickButton")).toBeTruthy();
   });
 
-  it("emits 'clickSecondary' event when clickSecondary method is called", async () => {
-    const wrapper = shallowMount(TvHero);
-    await wrapper.vm.clickSecondaryButton();
-
+  it("should emmit event when secondary button is clicked", async () => {
+    const wrapper = shallowMount(TvHero, {
+      props: {
+        configHero: {
+          ...configHero,
+          buttonSecondary: "View more",
+        },
+      },
+    });
+    wrapper.vm.handleClickSecondary();
     expect(wrapper.emitted("clickSecondaryButton")).toBeTruthy();
   });
 
-  it("renders the title correctly", () => {
-    const titleText = "Test title";
+  it("should render custom style", () => {
     const wrapper = shallowMount(TvHero, {
-      propsData: {
-        image: "https://todovue.com/img/todovue-logo.png",
-        imageName: "Test image",
-        titleText: titleText,
-      },
-      slots: {
-        title: `<div>${titleText}</div>`,
-        image: `<img src="https://todovue.com/img/todovue-logo.png" alt="Test image" />`,
+      props: {
+        configHero: {
+          ...configHero,
+          buttonSecondary: "View last blog",
+        },
+        customHero: {
+          bgBody: "#1e1d23",
+          colorBody: "#e1e2dc",
+          bgButton: "#8673a1",
+          buttonText: "#e1e2dc",
+          bgButtonSecondary: "#79308d",
+          buttonSecondaryText: "#e1e2dc",
+        },
       },
     });
-    expect(wrapper.find(".tv-hero-title").text()).toBe(titleText);
-    expect(wrapper.find("img").attributes("alt")).toBe("Test image");
-    expect(wrapper.find("img").attributes("src")).toBe(
-      "https://todovue.com/img/todovue-logo.png"
-    );
+    expect(wrapper.html()).toMatchSnapshot();
+  });
+
+  it("should return null when customHero is null", () => {
+    const wrapper = shallowMount(TvHero, {
+      props: {
+        configHero,
+        customHero: null,
+      },
+    });
+    expect(wrapper.vm.customHero).toEqual(null);
   });
 });

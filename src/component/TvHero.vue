@@ -1,30 +1,38 @@
 <template>
-  <div class="tv-hero-body" :class="{ 'tv-hero-entry': isEntry }">
-    <div class="tv-hero" :class="{ 'tv-hero-full': !image }">
-      <div class="tv-hero-image" v-if="image">
-        <img :src="image" :alt="imageName" />
+  <div
+    class="tv-hero-body"
+    :class="{ 'tv-hero-entry': isEntry }"
+    v-if="hero"
+    :style="custom.customHero"
+  >
+    <div class="tv-hero" :class="{ 'tv-hero-full': !hero.image }">
+      <div class="tv-hero-image" v-if="hero.image">
+        <img :src="hero.image" :alt="hero.alt" />
       </div>
       <div class="tv-hero-content">
         <div class="tv-hero-title">
-          <slot name="title" v-if="!titleText"></slot>
-          <template v-if="titleText">{{ titleText }}</template>
+          {{ hero.title }}
+          <div class="tv-hero-separator" :style="custom.bgAfter"></div>
         </div>
         <div class="tv-hero-description">
-          <slot name="description" v-if="!descriptionText"></slot>
-          <template v-if="descriptionText">{{ descriptionText }}</template>
+          {{ hero.description }}
         </div>
         <div class="tv-hero-actions" v-if="!isEntry">
-          <tv-button isRounded @click="clickPrimaryButton">
-            <slot name="buttonPrimary" v-if="!buttonPrimaryText"></slot>
-            <template v-if="buttonPrimaryText">
-              {{ buttonPrimaryText }}
-            </template>
+          <tv-button
+            isRounded
+            :customStyle="custom.customButton"
+            @click-button="handleClick"
+          >
+            {{ hero.button }}
           </tv-button>
-          <tv-button isRounded isOutlined @click="clickSecondaryButton">
-            <slot name="buttonSecondary" v-if="!buttonSecondaryText"></slot>
-            <template v-if="buttonSecondaryText">
-              {{ buttonSecondaryText }}
-            </template>
+          <tv-button
+            v-if="hero.buttonSecondary"
+            isRounded
+            isOutlined
+            :customStyle="custom.customButtonSecondary"
+            @click-button="handleClickSecondary"
+          >
+            {{ hero.buttonSecondary }}
           </tv-button>
         </div>
       </div>
@@ -34,57 +42,38 @@
 
 <script>
 import TvButton from "todovue-button";
+import useHero from "@/composable/useHero";
 export default {
   name: "TvHero",
   props: {
-    image: {
-      type: String,
-      default: null,
+    configHero: {
+      type: Object,
+      default: () => {},
     },
-    imageName: {
-      type: String,
-      default: null,
+    customHero: {
+      type: Object,
+      default: () => {},
     },
     isEntry: {
       type: Boolean,
       default: false,
     },
-    titleText: {
-      type: String,
-      default: null,
-    },
-    descriptionText: {
-      type: String,
-      default: null,
-    },
-    buttonPrimaryText: {
-      type: String,
-      default: null,
-    },
-    buttonSecondaryText: {
-      type: String,
-      default: null,
-    },
   },
   components: {
     TvButton,
   },
-  setup(_, { emit }) {
-    const clickPrimaryButton = () => {
-      emit("clickPrimaryButton");
-    };
-
-    const clickSecondaryButton = () => {
-      emit("clickSecondaryButton");
-    };
+  setup(props) {
+    const { handleClick, handleClickSecondary, custom, hero } = useHero(props);
 
     return {
-      clickPrimaryButton,
-      clickSecondaryButton,
+      handleClick,
+      handleClickSecondary,
+      custom,
+      hero,
     };
   },
-  emits: ["clickPrimaryButton", "clickSecondaryButton"],
+  emits: ["clickButton", "clickSecondaryButton"],
 };
 </script>
 
-<style></style>
+<style scoped lang="scss" src="../assets/scss/style.scss"></style>
